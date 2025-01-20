@@ -1,23 +1,7 @@
-"""
-Reduced rank regression class.
-Requires scipy to be installed.
-
-Implemented by Chris Rayner (2015)
-dchrisrayner AT gmail DOT com
-
-Optimal linear 'bottlenecking' or 'multitask learning'.
-"""
 import numpy as np
 from scipy import sparse
 
 class RRR(object):
-    """
-    Reduced Rank Regressor (linear 'bottlenecking' or 'multitask learning')
-    - X is an n-by-d matrix of features.
-    - Y is an n-by-D matrix of targets.
-    - rrank is a rank constraint.
-    - reg is a regularization parameter (optional).
-    """
     def __init__(self, X, Y, rank, reg=None):
         if np.size(np.shape(X)) == 1:
             X = np.reshape(X, (-1, 1))
